@@ -9,14 +9,14 @@ import java.util.List;
 @Data
 @Entity
 public class Tabuleiro {
-    List<List<Posicao>> posicoes;
+    private final List<List<Posicao>> posicoes;
 
     public Tabuleiro(){
         posicoes = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             List<Posicao> linha = new ArrayList<>();
             for (int j = 0; j < 9; j++) {
-                linha.add(new Posicao(i, j)); // ou outro construtor
+                linha.add(new Posicao(i, j, false)); // ou outro construtor
             }
             posicoes.add(linha);
         }
